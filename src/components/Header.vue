@@ -13,7 +13,7 @@
 
 				<nav class="col-md-12 d-flex justify-content-between mobile-screen">
 					<img src="../assets/logo.svg" alt="logo" class="mr-4" />
-					<i class="fas fa-bars text-gray" style="font-size: 1.7rem;"></i>
+					<i class="fas fa-bars text-gray" style="font-size: 1.7rem;" @click="toggle()"></i>
 				</nav>
 
 				<div class="text-end col-md-6 p-0 desktop-screen">
@@ -26,19 +26,37 @@
 				</div>
 			</div>
 		</div>
+
+		<MenuMobile :showMenuMobile="showMenuMobile" />
 	</header>
 </template>
 
 <script lang="ts">
 	import { defineComponent } from "vue";
+	import MenuMobile from "./MenuMobile.vue";
 
 	export default defineComponent({
-		name: "Header",
+    name: "Header",
+    components: { 
+		MenuMobile 
+	},
+	data () {
+		return {
+			showMenuMobile: false,
+		}
+	},
+	methods: {
+            toggle() {
+				this.showMenuMobile = !this.showMenuMobile;
+			},
+        }
 	});
 </script>
 
 <style scoped lang="scss">
 	header {
+		position: relative;
+
 		a {
 			font-weight: 600;
 		}
