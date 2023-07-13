@@ -68,6 +68,7 @@
                 list-style-type: none;
                 color: #c1bec5;
                 line-height: 2rem;
+                cursor: pointer;
 
                 &:first-of-type {
                     margin-top: 1rem;
@@ -84,6 +85,7 @@
 
             img {
                 height: 1.2rem;
+                cursor: pointer;
             }
         }
     }
