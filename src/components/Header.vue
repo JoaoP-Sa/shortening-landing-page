@@ -59,6 +59,7 @@
 
 		a {
 			font-weight: 600;
+			cursor: pointer;
 		}
 	}
 </style>
